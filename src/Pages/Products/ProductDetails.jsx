@@ -1,6 +1,7 @@
 import  { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import swal from 'sweetalert';
 
 const ProductDetails = () => {
   
@@ -16,8 +17,35 @@ const ProductDetails = () => {
     setProductDetails(findProductDetails);
   }, [id, products]);
 
-  const handleAddToCard = () => { 
-    console.log(productDetails);
+  const {image, name, brandName, type, price, shortDescription, rating}= productDetails
+
+
+
+  const handleAddToCart = () => { 
+    const myCartProducts = {image, name, brandName, type, price, shortDescription, rating};
+     console.log(myCartProducts);
+
+
+
+
+
+    fetch('http://localhost:4000/myCart', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(myCartProducts)
+})
+.then(res => res.json())
+.then(data => {
+    if(data.insertedId){
+        swal({
+            title: 'Product Added',
+            text: 'Product added to My Cart successfully',
+            icon:'success'
+          })
+    }
+  })
   }
 
 
@@ -25,7 +53,7 @@ const ProductDetails = () => {
   return (
     <div>
       <h1>Product Details: {productDetails.name}</h1>
-      <button onClick={handleAddToCard} className="btn">Add to cart</button>
+      <button onClick={handleAddToCart} className="btn">Add to cart</button>
     </div>
   );
 };

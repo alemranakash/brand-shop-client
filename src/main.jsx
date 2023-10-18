@@ -13,16 +13,19 @@ import MyCart from './Pages/MyCart';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import AuthProvider from './Provider/AuthProvider';
+import ErrorPage from './Pages/Errorpage';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children:[
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: ()=>fetch('/brand.json')
       },
       {
         path: "/addProduct",

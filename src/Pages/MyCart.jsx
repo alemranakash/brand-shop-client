@@ -49,8 +49,7 @@ const handleDelete = (id) => {
             <h1>{product.name}</h1>
             <h1>{product.brandName}</h1>
             <div>
-                <button className="btn my-5">Update</button>
-                <br />
+              
                 <button onClick={()=> handleDelete(product._id)} className="btn">Delete</button>
             </div>
         </div>)

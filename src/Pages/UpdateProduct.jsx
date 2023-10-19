@@ -1,23 +1,76 @@
+import { useLoaderData } from "react-router-dom";
+import swal from 'sweetalert';
+
+const UpdateProduct = () => {
+
+  const products = useLoaderData()
+
+  console.log(products);
+
+const {_id, image, name, brand_name, type, price, rating}= products
 
 
-const AddProductForm = () => {
-  const handleFormSubmit = (e) => {
+
+  const handleUpdateProduct = (e) => {
     e.preventDefault();
 
-    const image = e.target.image.value;
-    const name = e.target.name.value;
-    const brandName = e.target.brand_name.value;
-    const type = e.target.type.value;
-    const price = e.target.price.value;
+    const updatedImage = e.target.image.value;
+    const updatedName = e.target.name.value;
+    const updatedBrandName = e.target.brand_name.value;
+    const updatedType = e.target.type.value;
+    const updatedPrice = e.target.price.value;
+     const updatedRating = e.target.rating.value;
+
+const updatedProduct = {
+  image: updatedImage, 
+  name: updatedName, 
+  brand_name: updatedBrandName, 
+  type: updatedType, 
+  price: updatedPrice, 
+  rating: updatedRating
+};
+console.log(updatedProduct);
     
-    const rating = e.target.rating.value;
-const newProduct = {image, name, brandName, type, price, rating};
-console.log(newProduct);
-    
-    // console.log(image, name, brandName, type, price, shortDescription, rating);
+   
+swal({
+  title: 'Are you sure?',
+  text: "Want to update this product ?",
+  icon: 'warning',
+  buttons: true,
+  dangerMode: true,
+}).then((result) => {
+  if (result) {
+      fetch(`http://localhost:4000/products/${_id}`, {
+          method: 'PUT',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(updatedProduct)
+      })
+          .then(res => res.json())
+          .then(data => {
+              console.log(data)
+              if (data.modifiedCount > 0) {
+                  swal({
+                      title: 'Product Updated',
+                      text: 'Product updated successfully',
+                      icon: 'success'
+                  })
+              }
+          })
+  }
+})
+
 
 
   };
+
+
+
+
+
+
+
 
   return (
   <div>
@@ -25,7 +78,7 @@ console.log(newProduct);
       <div className="max-w-md mx-auto">
       <form
         className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-        onSubmit={handleFormSubmit}
+        onSubmit={handleUpdateProduct}
       >
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="image">
@@ -38,7 +91,7 @@ console.log(newProduct);
             placeholder="Image URL"
             className="input rounded-md input-bordered"
             required
-            defaultValue=""
+            defaultValue={image || ''}
           />
         </div>
         <div className="mb-4">
@@ -52,7 +105,7 @@ console.log(newProduct);
             placeholder="Product Name"
             className="input rounded-md input-bordered"
             required
-            defaultValue=""
+            defaultValue={name || ''}
           />
         </div>
         <div className="mb-4">
@@ -63,7 +116,7 @@ console.log(newProduct);
             name="brand_name"
             id="brand_name"
             className="input rounded-md input-bordered"
-            defaultValue="Apple"
+            defaultValue={brand_name || ''}
           >
             <option value="Apple">Apple</option>
             <option value="Samsung">Samsung</option>
@@ -84,7 +137,7 @@ console.log(newProduct);
             placeholder="Product Type"
             className="input rounded-md input-bordered"
             required
-            defaultValue=""
+            defaultValue={type || ''}
           />
         </div>
         <div className="mb-4">
@@ -98,7 +151,7 @@ console.log(newProduct);
             placeholder="Price"
             className="input rounded-md input-bordered"
             required
-            defaultValue=""
+            defaultValue={price || ''}
           />
         </div>
        
@@ -113,20 +166,13 @@ console.log(newProduct);
             placeholder="Rating"
             className="input rounded-md input-bordered"
             required
-            defaultValue=""
+            defaultValue={rating || ''}
           />
         </div>
-        <div className="flex items-center justify-between mb-4">
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type=""
-          >
-           Details
-          </button>
-        </div>
+       
 
         <div className="flex items-center justify-between">
-          <button
+          <button 
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
           >
@@ -139,4 +185,4 @@ console.log(newProduct);
   );
 };
 
-export default AddProductForm;
+export default UpdateProduct;

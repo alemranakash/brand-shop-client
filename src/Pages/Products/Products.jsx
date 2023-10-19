@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 import { useNavigate } from 'react-router-dom';
@@ -32,12 +32,17 @@ const filteredProducts = products.filter(
                 filteredProducts.map((product, idx) => <div key={idx} className="my-5">
                     <h1>{product.name}</h1>
                     <h1>{product.brandName}</h1>
+                    <h1>{product._id}</h1>
                     <button
-                            className="btn"
+                            className="btn btn-secondary my-2"
                             onClick={() => navigate(`/productDetails/${product._id}`)}
                         >
                             Details
                         </button>
+                        <br />
+                        <Link to={`/updateProduct/${product._id}`}>
+                        <button className="btn btn-primary">Update</button>
+                        </Link>
                 </div>)
             }
         </div>

@@ -1,6 +1,6 @@
-Website name: ``
+Website name: `i-Tech`
 
-Live Link: ``
+Live Link: `https://brand-shop-2a470.web.app/`
 
 ##  Project features and funtionalities 
 

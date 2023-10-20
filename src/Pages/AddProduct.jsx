@@ -18,7 +18,7 @@ const AddProduct = () => {
      const newProducts = {image, name, brandName, type, price, shortDescription, rating};
      console.log(newProducts);
         
-     fetch('http://localhost:4000/products', {
+     fetch('https://brand-shop-server-dhvpwtq9r-akashs-projects-91b81bb4.vercel.app/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ const AddProduct = () => {
     
   
       
-        // e.target.reset();
+        e.target.reset();
       };
       
 
@@ -53,10 +53,10 @@ const AddProduct = () => {
 
 
     return (
-        <div>
+        <div className=''>
             <h1 className="text-center text-4xl my-10">Add Product</h1>
           <div className="max-w-md mx-auto">
-  <form onSubmit={handleFormSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+  <form onSubmit={handleFormSubmit} className="bg-blue-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
     <div className="mb-4">
       <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="image">
         Image URL

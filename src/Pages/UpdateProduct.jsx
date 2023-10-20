@@ -40,7 +40,7 @@ swal({
   dangerMode: true,
 }).then((result) => {
   if (result) {
-      fetch(`http://localhost:4000/products/${_id}`, {
+      fetch(`https://brand-shop-server-dhvpwtq9r-akashs-projects-91b81bb4.vercel.app/products/${_id}`, {
           method: 'PUT',
           headers: {
               'Content-Type': 'application/json'
@@ -77,7 +77,7 @@ swal({
       <h1 className="text-center text-4xl my-10">Update Product</h1>
       <div className="max-w-md mx-auto">
       <form
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        className="bg-blue-100 shadow-md rounded px-8 pt-6 pb-8 mb-4"
         onSubmit={handleUpdateProduct}
       >
         <div className="mb-4">

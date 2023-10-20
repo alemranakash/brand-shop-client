@@ -38,12 +38,12 @@ const router = createBrowserRouter([
       {
         path: "/updateProduct/:id",
         element: <PrivateRoutes><UpdateProduct></UpdateProduct></PrivateRoutes>,
-        loader: ({params})=> fetch(`http://localhost:4000/products/${params.id}`)
+        loader: ({params})=> fetch(`https://brand-shop-server-dhvpwtq9r-akashs-projects-91b81bb4.vercel.app/products/${params.id}`)
       },
       {
         path: "/myCart",
         element: <PrivateRoutes><MyCart></MyCart></PrivateRoutes>,
-        loader: ()=>fetch('http://localhost:4000/myCart')
+        loader: ()=>fetch('https://brand-shop-server-dhvpwtq9r-akashs-projects-91b81bb4.vercel.app/myCart')
       },
       {
         path: "/login",
@@ -56,12 +56,12 @@ const router = createBrowserRouter([
       {
         path: "/products/:brandName",
         element: <Products></Products>,
-        loader: ()=>fetch('http://localhost:4000/products')
+        loader: ()=>fetch('https://brand-shop-server-dhvpwtq9r-akashs-projects-91b81bb4.vercel.app/products')
       },
       {
         path: "/productDetails/:id",
         element: <PrivateRoutes><ProductDetails></ProductDetails></PrivateRoutes>,
-        loader: ()=>fetch('http://localhost:4000/products')
+        loader: ()=>fetch('https://brand-shop-server-dhvpwtq9r-akashs-projects-91b81bb4.vercel.app/products')
       }
 
     ]

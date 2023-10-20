@@ -4,6 +4,8 @@ import Banner from "../Components/Banner";
 import BrandCards from "../Components/Brands/BrandCards";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
+import WhyChooseUs from "../Components/WhyChooseUs";
+import ContactUs from "../Components/ContactUs";
 
 
 const Home = () => {
@@ -55,6 +57,8 @@ const handleToggle = e => {
             <h1 className="text-4xl text-center mt-10 font-bold  text-blue-700 p-4 w-fit mx-auto rounded-lg">Our Brands</h1>
             <BrandCards></BrandCards>
             <AboutUs></AboutUs>
+            <WhyChooseUs></WhyChooseUs>
+            <ContactUs></ContactUs>
             <Footer></Footer>
            
         </div>

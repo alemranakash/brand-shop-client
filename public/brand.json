@@ -2,17 +2,26 @@
     {
       "id": 1,
       "brand_image": "https://i.ibb.co/NNX1RRw/apple.jpg",
-      "brand_name": "Apple"
+      "brand_name": "Apple",
+      "image_1": "https://i.ibb.co/8DhvsWm/intel-gpu.jpg",
+      "image_2": "https://i.ibb.co/9pXg2cy/intel-cpu.jpg",
+      "image_3": "https://i.ibb.co/YjFnj3H/ms-hololens.jpg"
     },
     {
       "id": 2,
       "brand_image": "https://i.ibb.co/mS23QGx/samsung.jpg",
-      "brand_name": "Samsung"
+      "brand_name": "Samsung",
+      "image_1": "https://i.ibb.co/8bQHmS8/intel-ssd.jpg",
+      "image_2": "https://i.ibb.co/3RkMjQw/intel-m-chip.jpg",
+      "image_3": "https://i.ibb.co/6PfsCqR/pixel-buds.jpg"
     },
     {
       "id": 3,
       "brand_image": "https://i.ibb.co/2ZFHkG4/sony.png",
-      "brand_name": "Sony"
+      "brand_name": "Sony",
+      "image_1": "",
+      "image_2": "",
+      "image_3": ""
     },
     {
       "id": 4,
@@ -22,12 +31,18 @@
     {
       "id": 5,
       "brand_image": "https://i.ibb.co/pygWfJP/intel.jpg",
-      "brand_name": "Intel"
+      "brand_name": "Intel",
+      "image_1": "",
+      "image_2": "",
+      "image_3": ""
     },
     {
       "id": 6,
       "brand_image": "https://i.ibb.co/j8GhHPt/microsoft.jpg",
-      "brand_name": "Microsoft"
+      "brand_name": "Microsoft",
+      "image_1": "",
+      "image_2": "",
+      "image_3": ""
     }
   ]
 

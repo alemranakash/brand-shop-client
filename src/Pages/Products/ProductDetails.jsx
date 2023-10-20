@@ -47,7 +47,7 @@ const ProductDetails = () => {
 
 
 
-    fetch('http://localhost:4000/myCart', {
+    fetch('https://brand-shop-server-dhvpwtq9r-akashs-projects-91b81bb4.vercel.app/myCart', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
@@ -73,18 +73,18 @@ const ProductDetails = () => {
     <Navbar></Navbar>
       <div className="card lg:card-side bg-blue-200 shadow-xl mt-20">
               <figure className="p-4 ">
-                <img className='rounded-xl' src="https://i.ibb.co/6DrTHGD/20231019-154024.jpg" alt="Album" />
+                <img className='rounded-xl' src={productDetails.image} alt="Album" />
               </figure>
               <div className="card-body">
 
 
              <div className="flex justify-between">
              <div>
-                <p className="text-5xl text-orange-500">
+                <p className="lg:text-5xl text-2xl text-orange-500">
                      {renderStars(productDetails.rating)}
                   </p>
                 </div>
-                <h2 className='font-semibold text-6xl text-black'><span className="text-3xl">$</span>{productDetails.price} </h2>
+                <h2 className='font-semibold text-4xl lg:text-6xl text-black'><span className="lg:text-3xl text-xl">$</span>{productDetails.price} </h2>
              </div>
 
 
@@ -93,7 +93,7 @@ const ProductDetails = () => {
                 <h2 className=' mt-10 text-2xl w-fit px-2 rounded-xl font-semibold'><span className="border-none">From</span> {productDetails.brandName}</h2>
                 
                
-               
+               <h2 className="mt-5 text-xl">{productDetails.shortDescription}</h2>
 
 
                 <div className="card-actions justify-end">

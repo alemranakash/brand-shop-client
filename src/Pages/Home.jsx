@@ -6,6 +6,7 @@ import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import WhyChooseUs from "../Components/WhyChooseUs";
 import ContactUs from "../Components/ContactUs";
+import ContactUs2 from "../Components/ContactUs2";
 
 
 const Home = () => {
@@ -58,7 +59,7 @@ const handleToggle = e => {
             <BrandCards></BrandCards>
             <AboutUs></AboutUs>
             <WhyChooseUs></WhyChooseUs>
-            <ContactUs></ContactUs>
+            <ContactUs2></ContactUs2>
             <Footer></Footer>
            
         </div>

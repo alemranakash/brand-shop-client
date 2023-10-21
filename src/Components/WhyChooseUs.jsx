@@ -4,7 +4,7 @@
 const WhyChooseUs = () => {
     return (
         <div>
-            <h1 className="text-center text-blue-700 font-bold text-4xl mb-10">Why Choose Us</h1>
+            <h1 className="text-center text-blue-700 font-bold text-5xl mb-10">Why Choose Us</h1>
           
             <div className="flex lg:flex-row flex-col gap-32">
                 <div className="flex-1">

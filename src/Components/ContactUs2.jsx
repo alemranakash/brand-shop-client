@@ -3,7 +3,7 @@
 
 function ContactUs2() {
   return (
-   <div>
+   <div className="">
      <h1 className="text-center text-blue-700 font-bold text-5xl my-20">Contact Us</h1>
     <section className="bg-white dark:bg-gray-900 rounded-md">
     <div className="container px-6 py-12 mx-auto">
